@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join page</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+<!-- ++++++++++++++++++++++Join us Page+++++++++++++++++ -->
+<form id="myForm" action="https://api.web3forms.com/submit" method="POST">
+    <input type="hidden" name="access_key" value="19a2b87f-6ef3-4ebe-abb3-d6cdcc3d50be">
+<section>
+    <div class="head">
+        <h1>Plz Fill Details:</h1>
+    </div>
+    <div class="input-box">
+        <input type="text" placeholder="First-Name" name="first_name">
+        <input type="text" placeholder="Last-Name" name="last_name">
+        <input type="email" placeholder="Email" name="email">
+        <input type="number" placeholder="Phone" name="phone">
+    </div>
+    <div class="Address-box">
+        <!-- <p>Address</p> -->
+        <textarea name="address" id="" placeholder="Enter_Address"></textarea>
+    </div>
+    <div class="button-box">
+        <div>
+            <button><a href="index.html">Back</a></button>
+        </div>
+        <div>
+            <button type="button" onclick="setFormAction()">Next</button>
+        </div>
+    </div>
+</section>
+
+<div id="successMessage" style="display: none; text-align: center; font-size: 20px; color: green;">
+    <i class="fa fa-check-circle" style="font-size: 40px;"></i>
+    <p>Form successfully submitted!</p>
+</div>
+
+
+<script>
+    function setFormAction() {
+        // Show the success message with checkmark
+        const successMessage = document.getElementById('successMessage');
+        successMessage.style.display = "block"; // Display the success message
+        
+        // Optionally, hide the form (if you want)
+        document.getElementById('myForm').style.display = "none";
+
+        // Simulate form submission after 2 seconds to give the user time to see the success message
+        setTimeout(function() {
+            const form = document.getElementById('myForm');
+            form.submit(); // Submit the form
+        }, 2000); // 2-second delay before form submission
+    }
+</script>
+
+</body>
+</html>
